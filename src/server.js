@@ -1,4 +1,6 @@
 const express = require("express");
+console.log("SERVER FILE STARTED");
+
 require("dotenv").config();
 
 const productRoutes = require("./routes/products");
@@ -7,9 +9,15 @@ const app = express();
 
 app.use(express.json());
 
+console.log("REGISTERING /products");
 app.use("/products", productRoutes);
 
-console.log("PRODUCT ROUTES REGISTERED");
+app.get("/test", (req, res) => {
+  res.json({
+    success: true,
+    message: "Test Route Working"
+  });
+});
 
 app.get("/", (req, res) => {
   res.status(200).json({
@@ -18,12 +26,7 @@ app.get("/", (req, res) => {
   });
 });
 
-app.get("/test", (req, res) => {
-  res.json({
-    success: true,
-    message: "Test Route Working"
-  });
-});
+
 
 const PORT = process.env.PORT || 5000;
 

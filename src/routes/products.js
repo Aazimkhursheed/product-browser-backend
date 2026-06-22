@@ -1,5 +1,7 @@
-const express = require("express");
 console.log("products.js loaded");
+
+
+const express = require("express");
 const router = express.Router();
 
 const {
