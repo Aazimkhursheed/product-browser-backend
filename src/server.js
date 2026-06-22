@@ -9,6 +9,8 @@ app.use(express.json());
 
 app.use("/products", productRoutes);
 
+console.log("PRODUCT ROUTES REGISTERED");
+
 app.get("/", (req, res) => {
   res.status(200).json({
     success: true,

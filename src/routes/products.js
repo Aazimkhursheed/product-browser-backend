@@ -1,4 +1,5 @@
 const express = require("express");
+console.log("products.js loaded");
 const router = express.Router();
 
 const {
